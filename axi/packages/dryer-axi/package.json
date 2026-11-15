@@ -1,0 +1,29 @@
+{
+  "name": "dryer-axi",
+  "version": "0.1.0",
+  "private": true,
+  "description": "AXI for dryer: structural duplicate code candidates",
+  "bin": {
+    "dryer-axi": "./bin/dryer-axi.js"
+  },
+  "type": "module",
+  "imports": {
+    "#src/*": {
+      "development": "./src/*.ts",
+      "types": "./dist/*.d.ts",
+      "default": "./dist/*.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p . --noEmit",
+    "test": "vitest run --root ../.. packages/dryer-axi/",
+    "coverage": "vitest run --root ../.. --coverage.enabled --coverage.reporter=lcov --coverage.include=packages/dryer-axi/src/** --coverage.reportsDirectory=coverage/dryer-axi packages/dryer-axi/",
+    "skill": "mkdir -p skill && node bin/dryer-axi.js skill > skill/SKILL.md",
+    "skill:check": "node bin/dryer-axi.js skill | diff -u skill/SKILL.md -"
+  },
+  "dependencies": {
+    "@ub-axi/core": "workspace:*",
+    "axi-sdk-js": "0.1.14"
+  }
+}
