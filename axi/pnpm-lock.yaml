@@ -54,6 +54,15 @@ importers:
         specifier: 0.1.14
         version: 0.1.14
 
+  packages/mutator-axi:
+    dependencies:
+      '@ub-axi/core':
+        specifier: workspace:*
+        version: link:../core
+      axi-sdk-js:
+        specifier: 0.1.14
+        version: 0.1.14
+
 packages:
 
   '@babel/helper-string-parser@7.29.14':
