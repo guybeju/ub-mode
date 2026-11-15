@@ -1,0 +1,14 @@
+{:candidates [
+ {:score 1.0
+  :language "python"
+  :left {:file "src/demo/board.py", :start-line 35, :end-line 40}
+  :right {:file "src/demo/board.py", :start-line 43, :end-line 48}
+  :left-nodes 105
+  :right-nodes 105}
+ {:score 0.674418604651
+  :language "python"
+  :left {:file "src/demo/board.py", :start-line 21, :end-line 25}
+  :right {:file "src/demo/board.py", :start-line 28, :end-line 32}
+  :left-nodes 66
+  :right-nodes 66}
+]}

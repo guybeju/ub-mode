@@ -1,0 +1,30 @@
+{
+  "name": "@ub-axi/core",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "imports": {
+    "#src/*": {
+      "development": "./src/*.ts",
+      "types": "./dist/*.d.ts",
+      "default": "./dist/*.js"
+    }
+  },
+  "exports": {
+    "./*": {
+      "development": "./src/*.ts",
+      "types": "./dist/*.d.ts",
+      "default": "./dist/*.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p . --noEmit",
+    "test": "vitest run --root ../.. packages/core/",
+    "coverage": "vitest run --root ../.. --coverage.enabled --coverage.reporter=lcov --coverage.include=packages/core/src/** --coverage.reportsDirectory=coverage/core packages/core/"
+  },
+  "dependencies": {
+    "@toon-format/toon": "2.3.1",
+    "axi-sdk-js": "0.1.14"
+  }
+}

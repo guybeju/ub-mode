@@ -108,16 +108,19 @@ Every time you are asked to make a change follow:
 ## Crapper
 
 * Use the crapper tool
+* `crapper-axi` shows its gate; `crapper-axi run [paths]` refreshes it.
 * Reduce each function under  CRAP 10 by splitting it, by testing it, or both.
 * Consider whether case statements are worth reducing.
 
 ## Dryer
 
 * Use the dryer tool to eliminate duplication that rank 0.8 or above.
+* `dryer-axi` shows its gate; `dryer-axi run [paths]` refreshes it.
 
 ## Mutator
 
 * Use the mutator tool
+* `mutator-axi` shows its gate; `mutator-axi run <path>` refreshes it.
 * Cover the uncovered.
 * Kill the survivors.
 * Delete dead code.

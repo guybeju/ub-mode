@@ -1,0 +1,29 @@
+{
+  "name": "crapper-axi",
+  "version": "0.1.0",
+  "private": true,
+  "description": "AXI for crapper: CRAP scores (complexity x coverage) per function",
+  "bin": {
+    "crapper-axi": "./bin/crapper-axi.js"
+  },
+  "type": "module",
+  "imports": {
+    "#src/*": {
+      "development": "./src/*.ts",
+      "types": "./dist/*.d.ts",
+      "default": "./dist/*.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p . --noEmit",
+    "test": "vitest run --root ../.. packages/crapper-axi/",
+    "coverage": "vitest run --root ../.. --coverage.enabled --coverage.reporter=lcov --coverage.include=packages/crapper-axi/src/** --coverage.reportsDirectory=coverage/crapper-axi packages/crapper-axi/",
+    "skill": "mkdir -p skill && node bin/crapper-axi.js skill > skill/SKILL.md",
+    "skill:check": "node bin/crapper-axi.js skill | diff -u skill/SKILL.md -"
+  },
+  "dependencies": {
+    "@ub-axi/core": "workspace:*",
+    "axi-sdk-js": "0.1.14"
+  }
+}

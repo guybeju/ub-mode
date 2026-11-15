@@ -1,0 +1,29 @@
+{
+  "name": "mutator-axi",
+  "version": "0.1.0",
+  "private": true,
+  "description": "AXI for mutator: mutation testing survivors and coverage gaps",
+  "bin": {
+    "mutator-axi": "./bin/mutator-axi.js"
+  },
+  "type": "module",
+  "imports": {
+    "#src/*": {
+      "development": "./src/*.ts",
+      "types": "./dist/*.d.ts",
+      "default": "./dist/*.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p . --noEmit",
+    "test": "vitest run --root ../.. packages/mutator-axi/",
+    "coverage": "vitest run --root ../.. --coverage.enabled --coverage.reporter=lcov --coverage.include=packages/mutator-axi/src/** --coverage.reportsDirectory=coverage/mutator-axi packages/mutator-axi/",
+    "skill": "mkdir -p skill && node bin/mutator-axi.js skill > skill/SKILL.md",
+    "skill:check": "node bin/mutator-axi.js skill | diff -u skill/SKILL.md -"
+  },
+  "dependencies": {
+    "@ub-axi/core": "workspace:*",
+    "axi-sdk-js": "0.1.14"
+  }
+}

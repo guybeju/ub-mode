@@ -1,0 +1,6 @@
+{:entries [
+  {:name "score", :namespace "demo.board", :complexity 6, :coverage 11.1111, :crap 31.284}
+  {:name "place", :namespace "demo.board", :complexity 5, :coverage 71.4286, :crap 5.5831}
+  {:name "beta", :namespace "demo.board", :complexity 2, :coverage 20.0, :crap 4.048}
+  {:name "alpha", :namespace "demo.board", :complexity 2, :coverage 100.0, :crap 2.0}
+]}

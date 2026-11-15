@@ -15,6 +15,10 @@
 - [unclebob/mutator](https://github.com/unclebob/mutator) — Runs mutation testing to expose uncovered code and surviving mutants that tests fail to catch.
 - [unclebob/uml-viewer](https://github.com/unclebob/uml-viewer) — Visualizes components, coverage, CRAP, mutation scores, and dependency directions.
 
+## Agent Interfaces
+
+[`axi/`](axi/) holds [AXI](https://github.com/kunchenguid/axi) wrappers for the three gate tools: `crapper-axi`, `dryer-axi` and `mutator-axi`. Each prints a token-efficient summary of its gate from the tool's `.metrics/` snapshot, runs the tool on request, and warns when a run measured nothing. See [`axi/README.md`](axi/README.md) for setup.
+
 ## Installation
 
 Copy `SKILL.md` into your agent's skills directory as `ub-mode/SKILL.md` (for example `~/.grok/skills/ub-mode/SKILL.md`, `~/.claude/skills/ub-mode/SKILL.md`, or `~/.cursor/skills/ub-mode/SKILL.md`), then invoke `/ub-mode`.

@@ -1,0 +1,7 @@
+{
+  "plugins": ["typescript", "import", "unicorn"],
+  "rules": {
+    "import/no-relative-parent-imports": "error",
+    "no-restricted-imports": ["error", { "patterns": [{ "group": ["./*", "../*"], "message": "Use package or # subpath imports." }] }]
+  }
+}
